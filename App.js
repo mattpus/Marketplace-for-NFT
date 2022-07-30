@@ -10,7 +10,7 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: "transparent",
+    background: "white",
   },
 };
 
@@ -32,9 +32,7 @@ const App = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-        }}
-        initialRouteName="Home"
-      >
+        }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
