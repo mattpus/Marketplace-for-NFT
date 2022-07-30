@@ -1,10 +1,17 @@
 import React from "react";
 import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native";
-
+import type { StackNavigationProp } from '@react-navigation/stack'
 import { COLORS, SIZES, assets, SHADOWS, FONTS } from "../constants";
 import { CircleButton, RectButton, SubInfo, DetailsDesc, DetailsBid, FocusedStatusBar } from "../components";
-
-const DetailsHeader = ({ data, navigation }) => (
+type DeatilsHeaderProps = {
+  data: any,
+  navigation: StackNavigationProp<any,any>,
+}
+type DetailsProps = {
+  route: any, 
+  navigation: any,
+}
+const DetailsHeader = ({ data, navigation }: DeatilsHeaderProps): React.ReactElement => (
   <View style={{ width: "100%", height: 373 }}>
     <Image
       source={data.image}
@@ -27,7 +34,7 @@ const DetailsHeader = ({ data, navigation }) => (
   </View>
 );
 
-const Details = ({ route, navigation }) => {
+const Details = ({ route, navigation }: DetailsProps): React.ReactElement => {
   const { data } = route.params;
 
   return (
